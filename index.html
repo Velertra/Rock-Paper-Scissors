@@ -10,6 +10,10 @@
   <body>
     <script>
 
+let x = 0; // user points
+let y = 0; // computer points
+
+
         let getComputerChoice =  function() {
             let i = Math.floor(Math.random() * 3) + 1; 
                 if (i < 2) {
@@ -26,7 +30,7 @@
             
 
 
-        function round () {
+        function playRound () {
             const playSelection = prompt('Rock, Paper Scissors?', );
             let computerSelection = getComputerChoice();
             let c = computerSelection
@@ -35,12 +39,14 @@
             
 
                 if (p == 'rock' && c == 3) {
+                    y += 1;
                     alert("You Lose! Paper beats Rock")
         
                 } else if (p == 'rock' && c == 1) {
                     alert("Its A Draw!")
 
                 } else if (p == 'rock' && c == 2) {// 1 is rock, 2 - scissors 3 - paper
+                    x += 1;
                     alert("You Win! Rock crushes Scissors")
 
                 } else if (p == 'scissors' && c == 2) {
@@ -48,15 +54,15 @@
                     alert("Its A Draw!")
 
                 } else if (p == 'scissors' && c == 1) {
-
+                    y += 1;
                     alert("You Lose! Rock crushes Scissors") 
 
                 } else if (p == 'scissors' && c == 3) {
-
+                    x += 1;
                     alert("You Win! Scissors cuts Paper!")
 
                 } else if (p == "paper" && c == 3) {
-
+                    x += 1;
                     alert("You Win! Paper covers Rock")
                     
                 } else if (p == "paper" && c == 1) {
@@ -64,7 +70,7 @@
                     alert("Its A Draw!")
 
                 } else if (p == "paper" && c == 2) {
-
+                    y += 1;
                     alert("You Lose! Scissors cut Paper")
                 } else {
                     alert("That wasnt an option!")
@@ -73,7 +79,22 @@
         }
 
 
+        function game() {
+        for (let i = 0; i < 10; i++) {
+            playRound(); 
+                if (x == 3) {
+                    alert("you are the winner!")
+                    break;
+                } 
+                if (y == 3) {
+                    alert("computer wins!")
+                    break;
+                }
+            
+        }
 
+    }
+game();
     </script>
 
 
