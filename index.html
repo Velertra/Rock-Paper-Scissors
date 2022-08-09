@@ -10,8 +10,8 @@
   <body>
     <script>
 
-        let computerSelection = getComputerChoice() {
-            let i = Math.floor(Math.random() * 3) + 1;
+        let getComputerChoice =  function() {
+            let i = Math.floor(Math.random() * 3) + 1; 
                 if (i < 2) {
                     console.log("rock")
                 } else if (i > 2) {
@@ -19,14 +19,56 @@
                 } else {
                     console.log("scissors")
                 }
-        }
+                return i; 
+            };
+        
 
+            
 
 
         function round () {
-            let playSelection = prompt('Rock, Paper Scissors?', );
-            let computerSelection = 
-                if (playSelection = 'Rock' && computerSelection = 'paper')
+            const playSelection = prompt('Rock, Paper Scissors?', );
+            let computerSelection = getComputerChoice();
+            let c = computerSelection
+            let p = playSelection.toLowerCase();
+            console.log(c);
+            
+
+                if (p == 'rock' && c == 3) {
+                    alert("You Lose! Paper beats Rock")
+        
+                } else if (p == 'rock' && c == 1) {
+                    alert("Its A Draw!")
+
+                } else if (p == 'rock' && c == 2) {// 1 is rock, 2 - scissors 3 - paper
+                    alert("You Win! Rock crushes Scissors")
+
+                } else if (p == 'scissors' && c == 2) {
+
+                    alert("Its A Draw!")
+
+                } else if (p == 'scissors' && c == 1) {
+
+                    alert("You Lose! Rock crushes Scissors") 
+
+                } else if (p == 'scissors' && c == 3) {
+
+                    alert("You Win! Scissors cuts Paper!")
+
+                } else if (p == "paper" && c == 3) {
+
+                    alert("You Win! Paper covers Rock")
+                    
+                } else if (p == "paper" && c == 1) {
+
+                    alert("Its A Draw!")
+
+                } else if (p == "paper" && c == 2) {
+
+                    alert("You Lose! Scissors cut Paper")
+                } else {
+                    alert("That wasnt an option!")
+                }                    
 
         }
 
