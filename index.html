@@ -5,13 +5,95 @@
     <title>Rock Paper Scissors</title>
   </head>
 
-
-
   <body>
+
+
+   
+        <div id="gamePlay">Start Game</div> 
+        <div id="container">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    </div>
+
+
+
+
     <script>
 
-let x = 0; // user points
-let y = 0; // computer points
+//const startButton = document.createElement('gamePlay');
+
+
+const button2 = document.querySelector('#paper');
+
+const button3 = document.querySelector('#scissors');
+
+const button1 = document.querySelector('#rock');
+
+// we use the .forEach method to iterate through each button
+// button3.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  paper.addEventListener('click', () => {
+    button2 == 'paper'
+    playGame(paper);
+  });
+
+  rock.addEventListener('click', () => {
+    button1 == 'rock'
+    playGame(rock)
+
+  });
+
+  scissors.addEventListener('click', () => {
+    button3 == 'scissors';
+    playGame(scissors);
+  });
+
+let x = 0;
+let y = 0;
+  
+
+
+
+               
+    function playGame(e) {   
+    
+       gamePlay.textContent = `you have ${y} points!
+  
+  while the computer has ${x}!`;
+
+         playRound(e);
+               if (x == 3) {
+                gamePlay.textContent = "computer wins!";
+                   x - x; 
+                   y - y;
+                } 
+                if (y == 3) {
+                    gamePlay.textContent = "You are the winner!";
+                    
+                    x - x;
+                    y - y;
+                }
+
+            
+        }
+
+
+        
+    
+
+
+
+  
+  
+/*        gamePlay.addEventListener('click', () => {
+            playRound();
+        });
+
+*/
+
 
 
         let getComputerChoice =  function() {
@@ -19,23 +101,84 @@ let y = 0; // computer points
                 if (i < 2) {
                     console.log("rock")
                 } else if (i > 2) {
-                    console.log("paper")
-                } else {
                     console.log("scissors")
+                } else {
+                    console.log("paper")
                 }
                 return i; 
             };
         
 
+
+
             
 
 
-        function playRound () {
+
+            function playRound (e){
+                let c = getComputerChoice();
+                  
+         /*       for (let i = 0; i < 30; i++) {   
+
+                    let y = 0; // user points
+                    let x = 0; // computer points
+            
+          //  playRound(); 
+                if (x == 3) {
+                    alert("computer wins..")
+                    break;
+                } 
+                if (y == 3) {
+                    alert("you are the winner!!")
+                    break;
+                }
+            
+        }    */
+                           // 1 rock 2 paper 3 scissors
+                    console.log(button2);
+                if (c == 2 && e == button1) {
+                   x += 1;
+                    alert('you lose. paper covers rock');
+                } else if (c == 2 && e == button3) {
+                   y += 1; 
+                    alert('you win! scissors cuts paper');
+                } else if (c == 3 && e == button2) {
+                   x += 1;
+                    alert ('you lose.. scissors cuts paper')
+                } else if (c == 3 && e == button1) {
+                   y += 1;
+                    alert('you win! rock crushed scissors')
+                } else if (c == 1 && e == button3) {
+                  x += 1;
+                    alert('you lose.. rock crushed ya') 
+                } else if (c == 1 && e == button2) {
+                   y += 1;
+                    alert('you win! paper covers rock')
+                } else {
+                    alert("draw");
+                }
+              
+
+
+
+            }
+
+
+
+
+
+
+
+
+            
+
+
+      /*  function playRound () {
             const playSelection = prompt('Rock, Paper Scissors?', );
             let computerSelection = getComputerChoice();
             let c = computerSelection
-            let p = playSelection.toLowerCase();
-            console.log(c);
+          //  let p = playSelection.toLowerCase();
+        //    console.log(c);
             
 
                 if (p == 'rock' && c == 3) {
@@ -79,7 +222,17 @@ let y = 0; // computer points
         }
 
 
-        function game() {
+
+*/
+
+
+
+
+
+
+
+
+       /* function game() {
         for (let i = 0; i < 10; i++) {
             playRound(); 
                 if (x == 3) {
@@ -97,7 +250,7 @@ let y = 0; // computer points
 game();
 
 
-
+*/
 
 
 
