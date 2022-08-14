@@ -60,11 +60,13 @@ let y = 0;
                
     function playGame(e) {   
     
-       gamePlay.textContent = `you have ${y} points!
+       
+         playRound(e);
+
+         gamePlay.textContent = `you have ${y} points!
   
   while the computer has ${x}!`;
 
-         playRound(e);
                if (x == 3) {
                 gamePlay.textContent = "computer wins!";
                    x - x; 
@@ -72,7 +74,6 @@ let y = 0;
                 } 
                 if (y == 3) {
                     gamePlay.textContent = "You are the winner!";
-                    
                     x - x;
                     y - y;
                 }
@@ -117,23 +118,7 @@ let y = 0;
 
             function playRound (e){
                 let c = getComputerChoice();
-                  
-         /*       for (let i = 0; i < 30; i++) {   
-
-                    let y = 0; // user points
-                    let x = 0; // computer points
-            
-          //  playRound(); 
-                if (x == 3) {
-                    alert("computer wins..")
-                    break;
-                } 
-                if (y == 3) {
-                    alert("you are the winner!!")
-                    break;
-                }
-            
-        }    */
+        
                            // 1 rock 2 paper 3 scissors
                     console.log(button2);
                 if (c == 2 && e == button1) {
